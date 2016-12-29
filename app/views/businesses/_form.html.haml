@@ -1,0 +1,14 @@
+= form_for(@business) do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', placeholder: 'ex.Name business', required: true
+  .form-group
+    = f.label :city
+    = f.text_field :city, class: 'form-control', placeholder: 'ex.City', required: true
+  .form-group
+    = f.label :address
+    = f.text_area :address, class: 'form-control', placeholder: 'ex.Address', required: true
+  = f.submit "Save", class: "btn btn-lg btn-primary"
+
+  = render 'items_form', f: f

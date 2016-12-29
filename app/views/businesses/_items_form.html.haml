@@ -1,0 +1,11 @@
+%h3 
+  Add Items
+  = link_to_add_association f, :items, partial: 'item_fields', class: "btn btn-success btn-sm pull-right" do
+    %i.fa.fa-picture-o
+    %span Add New Item
+%hr
+
+= f.fields_for :items do |g|
+  = render 'item_fields', f: g
+
+= f.submit "Save", class: "btn btn-lg btn-primary"

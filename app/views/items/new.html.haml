@@ -1,0 +1,7 @@
+- provide(:title, 'New item')
+%h1.text-center New item
+.row
+  .col-md-8.col-md-offset-2
+    = link_to 'Back', businesses_path, class: 'btn btn-success pull-left'
+    .box-content
+      = render 'form'

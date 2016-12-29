@@ -1,0 +1,7 @@
+- provide(:title, 'Edit business up')
+%h1.text-center Edit business
+.row
+  .col-md-8.col-md-offset-2
+    = link_to 'Back', businesses_path, class: 'btn btn-success pull-left'
+    .box-content
+      = render 'form'

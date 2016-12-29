@@ -1,0 +1,59 @@
+- provide(:title, 'List business')
+%h1.text-center My Business
+.row
+  .col-md-8.col-md-offset-2
+    .box-content
+      %table.table.table-striped
+        %tr
+          %td{width: '3%'} Business Name
+          %td 
+            = @business.name
+        %tr
+          %td City
+          %td 
+            = @business.city
+        %tr
+          %td Address
+          %td 
+            = @business.address
+        %tr
+          %td Items
+          %td 
+            = @business.items.size
+        %tr
+          %td Created At
+          %td 
+            = @business.created_at.strftime("%I:%M %B, %d, %Y")
+        %tr
+          %td Action
+          %td{width: '15%;'}
+            = link_to '<i class="fa fa-wrench" aria-hidden="true"></i>'.html_safe, edit_business_path(@business), class: 'btn btn-xs btn-info'
+            = link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, business_path(@business), method: 'delete', data: {confirm: "Are you sure deleted this business!"}, class: 'btn btn-xs btn-danger'
+
+    - if @business.present?
+      .box-content
+        %h3 
+          Items Business
+          = link_to 'Create New', new_item_path, class: 'btn btn-success pull-right'
+        %hr
+        - if current_business.items.present?
+          %table.table.table-striped
+            %thead
+              %th{width: '20%'} No.
+              %th Name
+              %th Price
+              %th Action
+            %tbody
+              - current_business.items.each_with_index do |item, index|
+                %tr
+                  %td
+                    = index+1
+                  %td 
+                    = item.name
+                  %td 
+                    = get_currency(item.price)
+                  %td
+                    = link_to '<i class="fa fa-wrench" aria-hidden="true"></i>'.html_safe, edit_item_path(item), class: 'btn btn-xs btn-info'
+                    = link_to '<i class="fa fa-trash" itemaria-hidden="true"></i>'.html_safe, item_path(item), method: 'delete', data: {confirm: "Are you sure deleted this item!"}, class: 'btn btn-xs btn-danger'
+        - else
+          .alert.alert-warning data item is empty!

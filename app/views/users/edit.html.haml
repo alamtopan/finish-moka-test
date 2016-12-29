@@ -1,0 +1,17 @@
+- provide(:title, 'Edit Profile')
+%h1.text-center Edit Profile
+.row
+  #signup-form.col-md-4.col-md-offset-4
+    .box-content
+      = form_for(@user) do |f|
+        = f.label :first_name
+        = f.text_field :first_name, class: 'form-control', placeholder: 'ex.Alam'
+        = f.label :last_name
+        = f.text_field :last_name, class: 'form-control', placeholder: 'ex.Topani'
+        = f.label :email
+        = f.email_field :email, class: 'form-control', placeholder: 'ex.alam@gmail.com'
+        = f.label :password
+        = f.password_field :password, class: 'form-control', placeholder: 'ex.12345678'
+        = f.label :password_confirmation, "Confirmation"
+        = f.password_field :password_confirmation, class: 'form-control', placeholder: 'ex.12345678'
+        = f.submit "Edit my account", class: "btn btn-lg btn-primary"

@@ -1,0 +1,9 @@
+= form_for(@item) do |f|
+  = f.hidden_field :business_id, value: current_business.id
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', placeholder: 'ex.Name', required: true
+  .form-group
+    = f.label :price
+    = f.number_field :price, class: 'form-control', placeholder: 'ex.10000', required: true
+  = f.submit "Save", class: "btn btn-lg btn-primary"

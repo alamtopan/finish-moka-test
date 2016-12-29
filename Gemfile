@@ -6,6 +6,7 @@ gem 'rails', '4.2.5.1'
 gem 'sass-rails', '5.0.4'
 gem 'bootstrap-sass', '3.3.6'
 gem 'sprockets', '~> 3.6.3'
+gem "haml-rails"
 
 # Database
 gem 'pg', '0.18.1'
@@ -16,6 +17,7 @@ gem 'jquery-rails', '3.0.4'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.1.2'
+gem 'cocoon'
 
 group :development, :test do
   # Debugger
@@ -23,6 +25,17 @@ group :development, :test do
   gem 'pry-nav', '0.2.4'
   gem 'pry-rails', '0.3.3'
   gem 'pry-rescue', '1.4.2'
+  gem "autotest"
+  gem "rspec-rails"
+  gem "cucumber-rails"
+  gem "webrat"
+  gem 'factory_girl_rails'
+  gem 'email_spec'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'shoulda-context'
 end
 
 group :development do

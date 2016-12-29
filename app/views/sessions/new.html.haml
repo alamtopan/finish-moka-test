@@ -1,0 +1,14 @@
+- provide(:title, 'Log in')
+%h1.text-center Log in
+.row
+  #signup-form.col-md-4.col-md-offset-4
+    .box-content
+      = form_for(:session, url: login_path) do |f|
+        = f.label :email
+        = f.email_field :email, class: 'form-control'
+        = f.label :password
+        = f.password_field :password, class: 'form-control'
+        = f.submit "Log in", class: "btn btn-primary", id: "login-button"
+      %p#new-user-text
+        New user? #{link_to "Sign up now!", signup_path}
+

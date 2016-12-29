@@ -1,0 +1,30 @@
+- provide(:title, 'List business')
+%h1.text-center My Items
+.row
+  .col-md-8.col-md-offset-2
+    .box-content
+      %h3 
+        Items Business
+        = link_to 'Create New', new_item_path, class: 'btn btn-success pull-right'
+      %hr
+      - if @items.present?
+        %table.table.table-striped
+          %thead
+            %th{width: '20%'} No.
+            %th Name
+            %th Price
+            %th Action
+          %tbody
+            - @items.each_with_index do |item, index|
+              %tr
+                %td
+                  = index+1
+                %td 
+                  = item.name
+                %td 
+                  = get_currency(item.price)
+                %td
+                  = link_to '<i class="fa fa-wrench" aria-hidden="true"></i>'.html_safe, edit_item_path(item), class: 'btn btn-xs btn-info'
+                  = link_to '<i class="fa fa-trash" itemaria-hidden="true"></i>'.html_safe, item_path(item), method: 'delete', data: {confirm: "Are you sure deleted this item!"}, class: 'btn btn-xs btn-danger'
+      - else
+        .alert.alert-warning data item is empty!
