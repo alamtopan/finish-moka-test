@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     redirect_to login_path, notice: "Please login first" if current_user.blank?
   end
+
+  def yukino
+    return 'mahesa'
+  end
 end
