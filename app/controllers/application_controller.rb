@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
   def nonalisa
     return 'mahesa1'
   end
+
+  def bakugan
+    return 'mahesa1'
+  end
 end
