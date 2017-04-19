@@ -32,4 +32,8 @@ class ApplicationController < ActionController::Base
   def bakugan2
     return 'mahesa1'
   end
+
+  def bakugan3
+    return 'mahesa1'
+  end
 end
