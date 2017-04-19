@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def yukino
     return 'mahesa'
   end
+
+  def nonalisa
+    return 'mahesa1'
+  end
 end
